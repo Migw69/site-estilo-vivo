@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Consumo de Internet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>WiFind</h1>
+            </div>
+            <nav>
+                <ul>
+                  
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="dashboard" class="section">
+            <div class="container">
+                <h2>Seu Consumo de Internet</h2>
+                <div class="graph-container">
+                    <canvas id="internetUsageChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section id="planos" class="section">
+            <div class="container">
+                <h2>Planos de Celular</h2>
+                <div class="cards">
+                    <div class="card">
+                        <h3>Básico</h3>
+                        <p>05 conexões simultâneas</p>
+                        <p>33G Internet</p>
+                        <p>R$33,99/mês</p>
+                        <button class="btn">Assinar</button>
+                    </div>
+                    <div class="card">
+                        <h3>WiFind+</h3>
+                        <p>10 Conexões Simultâneas</p>
+                        <p>43G De Internet</p>
+                        <p>R$43,99/mês</p>
+                        <button class="btn">Assinar</button>
+                    </div>
+                    <div class="card">
+                        <h3>Premium</h3>
+                        <p>Conexões Ilimitadas</p>
+                        <p>53G De Internet</p>
+                        <p>R$53,99/mês</p>
+                        <button class="btn">Assinar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    
+    </footer>
+    <section id="overview" class="section">
+        <div class="container">
+            <h2>Resumo do Consumo de Internet</h2>
+            <div class="stats">
+                <div class="stat">
+                    <h3>Total de Internet</h3>
+                    <p id="totalInternet">33 GB</p>
+                </div>
+                <div class="stat">
+                    <h3>Internet Restante</h3>
+                    <p id="internetRemainingChart">25 GB</p>
+                    <canvas id="internetRemainingChart"></canvas>
+                </div>
+                <div class="stat">
+                    <h3>Internet Usada</h3>
+                    <p id="internetUsedChart">8 GB</p>
+                    <canvas id="internetUsedChart"></canvas>
+                </div>
+                <div class="stat">
+                    <h3>Recargas Gastas</h3>
+                    <p id="totalRecarga">R$33,99</p>
+                </div>
+            </div>
+        </div>
+            
+   
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #ffffff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: #2257CB;
+    color: #fff;
+    padding: 20px 0;
+}
+
+header .logo h1 {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.section {
+    padding: 40px 0;
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 26px;
+}
+
+.graph-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.card p {
+    margin-bottom: 10px;
+}
+
+.btn {
+    background-color: #002850;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #2257CB;
+}
+
+footer {
+    background-color: #002850;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+.stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.stat {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stat h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.stat p {
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+
+
+</style>
